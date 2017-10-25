@@ -1,4 +1,8 @@
 canvas {
-  margin-left: 25%;
-	border: 10px solid green;
+        margin-left: 25%;
+        border: 10px solid green;
+}
+
+.center {
+	margin-left:25%;
 }

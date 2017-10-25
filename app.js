@@ -20,18 +20,19 @@ class Game {
 		document.addEventListener('keydown', function(event) {
 			
 				switch(event.keyCode) {
+					case 87:
+						this.paddle1.moveUp();
+						break;
+					case 83:
+						this.paddle1.moveDown();
+						break;
 					case 38:
 						this.paddle2.moveUp();
 						break;
 					case 40:
 						this.paddle2.moveDown();
 						break;
-					case 81:
-						this.paddle1.moveUp();
-						break;
-					case 65:
-						this.paddle1.moveDown();
-						break;
+					
 				}		
 			}.bind(this));
 }

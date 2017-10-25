@@ -1,0 +1,4 @@
+canvas {
+  margin-left: 25%;
+	border: 10px solid green;
+}

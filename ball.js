@@ -7,11 +7,11 @@ class Ball {
 	}
 
 	render(){
-		context.beginPath();
-		context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
-		context.fillStyle = 'white';
-		context.fill();
-		context.closePath();
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
+		ctx.fillStyle = 'white';
+		ctx.fill();
+		ctx.closePath();
 	}
 
 	move(){

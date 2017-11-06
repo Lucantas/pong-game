@@ -1,21 +1,33 @@
+
 const canvas = document.getElementById("canvas");
-const context = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 let movement = [3, 3];
+
+window.onload = function() {
+	const game = new Game(canvas);
+	game.resetCanvas();
+	game.play();
+}
+
+
 
 class Game {
 
 	constructor(){
+
+		this.bgImage = document.getElementById('bg-image');
+
 		this.canvas = canvas;
 		this.ball = new Ball([15, 15], 5);
-		this.ball.render(this.context);
+		this.ball.render(this.ctx);
 
 		const height = 90;
 		let positionY = (this.canvas.clientHeight / 2) - height / 2;
 
 		this.paddle1 = new Paddle(0, positionY, 10, height);
-		this.paddle1.render(this.context);
+		this.paddle1.render(this.ctx);
 		this.paddle2 = new Paddle(this.canvas.clientWidth-10, positionY, 10, height);
-		this.paddle2.render(this.context);
+		this.paddle2.render(this.ctx);
 		
 		document.addEventListener('keydown', function(event) {
 			
@@ -38,8 +50,8 @@ class Game {
 }
 
 	resetCanvas() {
-		context.fillStyle = "#000000";
-		context.fillRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+		ctx.fillStyle = "#000000";
+		ctx.drawImage(this.bgImage,0,0,canvas.clientWidth,canvas.clientHeight);
 }
 
     collisions(movement) {
@@ -54,7 +66,7 @@ class Game {
     			this.ball.move(movement);
     	}else{
     		this.ball = new Ball([300, 200], 5);
-			this.ball.render(this.context);
+			this.ball.render(this.ctx);
     		movement[0] = -movement[0];
 		}
 		}else if(this.ball.y < this.ball.radius || this.ball.y > this.canvas.clientHeight-this.ball.radius) {
@@ -71,19 +83,15 @@ class Game {
 	play() {
 		setInterval(function() {
 			this.resetCanvas();
-			this.ball.render(this.context);
-			this.paddle1.render(this.context);
-			this.paddle2.render(this.context);
+			this.ball.render(this.ctx);
+			this.paddle1.render(this.ctx);
+			this.paddle2.render(this.ctx);
 			this.collisions(movement);
 		}.bind(this), 17);
 	};
 
 }
 
-const game = new Game(canvas);
 
-game.resetCanvas();
-
-game.play();
 
 

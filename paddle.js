@@ -8,8 +8,8 @@ class Paddle{
 }
 
  	render() {
-		context.fillStyle = 'white';
-		context.fillRect(this.x, this.y, this.width, this.height);
+		ctx.fillStyle = 'white';
+		ctx.fillRect(this.x, this.y, this.width, this.height);
 }
 
     moveUp() {

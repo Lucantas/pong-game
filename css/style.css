@@ -6,3 +6,7 @@ canvas {
 .center {
 	margin-left:25%;
 }
+
+#bg-image {
+	display:none;
+}

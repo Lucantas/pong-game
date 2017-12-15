@@ -1,0 +1,20 @@
+Todo
+
+Interface and Experience :
+  - Create a space to keep scores
+  - Create a space to load saved scores
+  - Create a space to save scores with name
+  - Create psychedelic mode with a lot more colors, and a lot more effects
+  
+Logic:
+  - Create scores
+  - Enable music
+  - Different speeds, paddle's sizes, ball radius, board sizes
+  - Create a space to load saved scores
+  - Create a space to save scores with name
+  
+  
+Bugs:
+  - Sometimes ball bounce even outside paddle
+  - The wall is not considering the ball radius
+  - Sidewalls not considering ball radius
